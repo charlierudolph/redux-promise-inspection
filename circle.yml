@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: 6
+
+
+test:
+  post:
+    - npm run build
+
+
+deployment:
+  publish:
+    branch: master
+    commands:
+      - npm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN
+      - npm publish
