@@ -1,9 +1,11 @@
-test:
-  pre:
-    - npm run build
+machine:
+  node:
+    version: 6
 
-  override:
-    - 'true'
+
+test:
+  post:
+    - npm run build
 
 
 deployment:
