@@ -1,5 +1,5 @@
 require! {
-  './': promiseInspectionMiddleware
+  '../src': promiseInspectionMiddleware
   'redux-mock-store': {default: configureStore}
   bluebird: {coroutine}: Promise
 }

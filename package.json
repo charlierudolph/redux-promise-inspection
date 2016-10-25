@@ -27,6 +27,6 @@
   },
   "scripts": {
     "build": "lsc --compile --bare --output lib src",
-    "test": "mocha src"
+    "test": "mocha test"
   }
 }
