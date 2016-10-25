@@ -1,12 +1,12 @@
 # Redux Promise Inspection Middleware
 
-# Installation
+## Installation
 
 ```
 $ npm install --save redux-promise-inspection-middleware
 ```
 
-# Usage
+## Usage
 
 ```js
 import {createStore, applyMiddleware} from 'redux';
@@ -16,7 +16,7 @@ const promiseMiddleware = reduxPromiseInspectionMiddleware()
 const store = createStore(/*...*/, applyMiddleware(promiseMiddleware));
 ```
 
-# Examples
+## Examples
 
 For actions which are a [flux standard action]() where the payload is a promise if dispatches the following actions
 ```js
@@ -63,7 +63,7 @@ dispatch({
 }
 ```
 
-# Configuration
+## Configuration
 
 The default configuration is
 ```js
@@ -82,4 +82,20 @@ The default configuration is
     reason: 'reason'
   }
 }
+```
+
+An example of overriding the configuration is as follows:
+
+```js
+const promiseMiddleware = reduxPromiseInspectionMiddleware({
+  globalActionTypes: {
+    fulfilled: 'promise/fulfilled'
+    pending: 'promise/pending'
+    rejected: 'promise/rejected'
+  },
+  payloadKeys: {
+    value: 'result'
+    reason: 'error'
+  }
+})
 ```
