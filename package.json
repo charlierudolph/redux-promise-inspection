@@ -8,18 +8,20 @@
   },
   "dependencies": {
     "flux-standard-action": "^0.6.1",
+    "lodash.assign": "^4.2.0",
     "lodash.defaultsdeep": "^4.6.0"
   },
   "devDependencies": {
     "bluebird": "^3.4.6",
     "chai": "^3.5.0",
+    "dependency-lint": "^4.2.0",
     "livescript": "^1.5.0",
-    "lodash.assign": "^4.2.0",
     "mocha": "^3.1.2",
-    "redux": "^3.6.0",
     "redux-mock-store": "^1.2.1"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/charlierudolph/redux-promise-inspection-middleware#readme",
   "repository": {
     "type": "git",
@@ -27,6 +29,8 @@
   },
   "scripts": {
     "build": "lsc --compile --bare --output lib src",
-    "test": "mocha test"
+    "lint-dependencies": "dependency-lint",
+    "unit-test": "mocha test",
+    "test": "npm run lint-dependencies && npm run unit-test"
   }
 }
